@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="addUser.css"/>
+    <script type="text/javascript" src="addUser.js"></script>
+    <script type="text/javascript" src="../../../utils/jquery.js"></script>
+    <title>Koutye</title>
+</head>
+<body>
+    
+    <a href="../header/header.html"></a>
+
+    <div id="form">
+        <fieldset>
+            <legend>Nouvel Utilisateur</legend>
+        <div class="content">
+            <input type="text" name="nom" placeholder="Nom "/>
+            <input type="text" name="prenom" placeholder="Prenom "/>
+        </div>
+        <div class="content">
+            <input type="text" name="username" placeholder="Nom utilisateur "/>
+            <input type="email" name="email" placeholder="Email "/>
+        </div>
+        <div class="content">
+            <input type="password" name="password" placeholder="Mot de passe "/>
+            <input type="password" name="password2" placeholder="Retapez mot de passe"/>
+        </div>
+        <div class="content">
+            <input type="tel" name="phone" placeholder="Telephone"/>
+            <select name="type" placeholder="type utilisateur">
+                <option value="Courtier">Courtier</option>
+                <option value="Locataire">Locataire</option>
+                <option value="Proprietaire">Propriétaire</option>
+            </select>
+        </div>
+        <div class="content">
+            <button type="submit">Enregistrer</button>
+            
+        </div>
+    </fieldset>
+    </div>
+<!-- <script>
+    $(document).ready(function(){
+    alert("Hello world");
+})
+</script> -->
+    
+</body>
+</html>

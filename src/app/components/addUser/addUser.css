@@ -1,0 +1,30 @@
+#form
+{
+    margin-top: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+fieldset
+{
+    width: 50%;
+}
+
+.content
+{
+    margin-top: 5px;
+    display: flex;
+    flex-direction: row;
+}
+
+.content input
+{
+    width: 50%;
+    margin-right: 10px;
+}
+
+.content select
+{
+    width: 50%;
+    margin-right: 10px;
+}

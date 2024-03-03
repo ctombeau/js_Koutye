@@ -12,40 +12,68 @@
     
     <a href="../header/header.html"></a>
 
-    <div id="form">
+    <form id="form-add">
         <fieldset>
             <legend>Nouvel Utilisateur</legend>
         <div class="content">
-            <input type="text" name="nom" placeholder="Nom "/>
-            <input type="text" name="prenom" placeholder="Prenom "/>
+            <input type="text" name="nom" id="nom" placeholder="Nom "/>
+            <input type="text" name="prenom" id="prenom" placeholder="Prenom "/>
         </div>
         <div class="content">
-            <input type="text" name="username" placeholder="Nom utilisateur "/>
-            <input type="email" name="email" placeholder="Email "/>
+            <input type="text" name="username" id="username" placeholder="Nom utilisateur "/>
+            <input type="email" name="email" id="email" placeholder="Email "/>
         </div>
         <div class="content">
-            <input type="password" name="password" placeholder="Mot de passe "/>
-            <input type="password" name="password2" placeholder="Retapez mot de passe"/>
+            <input type="password" name="password" id="password" placeholder="Mot de passe "/>
+            <input type="password" name="password2" id="password2" placeholder="Retapez mot de passe"/>
         </div>
         <div class="content">
-            <input type="tel" name="phone" placeholder="Telephone"/>
-            <select name="type" placeholder="type utilisateur">
+            <input type="tel" name="phone" id="phone" placeholder="Telephone"/>
+            <select name="type" id="type" placeholder="type utilisateur">
                 <option value="Courtier">Courtier</option>
                 <option value="Locataire">Locataire</option>
                 <option value="Proprietaire">Propriétaire</option>
             </select>
         </div>
         <div class="content">
-            <button type="submit">Enregistrer</button>
+            <button type="submit" id="btn-submit">Enregistrer</button>
             
         </div>
     </fieldset>
-    </div>
-<!-- <script>
+</form>
+<script type="text/javascript">
+    
     $(document).ready(function(){
-    alert("Hello world");
-})
-</script> -->
+       
+    
+    $("#form-add").submit(function(e) {
+    //    e.preventDefault();
+
+    const data ={
+        nom: $("#nom").val(),
+        prenom: $("#prenom").val(),
+        username: $("#username").val(),
+        email: $("#email").val(),
+        password: $("#password").val(),
+        telephone: $("#phone").val(),
+        nomType: $("#type").val()
+    }
+        
+    $.ajax({
+      type: "POST",
+      url: "localhost:5050/api/user/add",
+      contentType: "application/json",
+      data: JSON.stringify(data),
+      success: function(){
+        $(".message_field").html('Thanks!');
+      }
+    });
+    
+    return false;
+  });
+
+});
+</script>
     
 </body>
 </html>

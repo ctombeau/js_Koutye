@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="addUser.css"/>
-    <script type="text/javascript" src="addUser.js"></script>
-    <script type="text/javascript" src="../../../utils/jquery.js"></script>
+    <link rel="stylesheet" href="src/app/components/addUser/addUser.css"/>
+    <script type="text/javascript" src="src/app/components/addUser/addUser.js"></script>
+    <script type="text/javascript" src="src/utils/jquery.js"></script>
     <title>Koutye</title>
 </head>
 <body>
@@ -41,10 +41,10 @@
         </div>
     </fieldset>
 </form>
-<script type="text/javascript">
-    
+<script >
+   
+   
     $(document).ready(function(){
-       
     
     $("#form-add").submit(function(e) {
     //    e.preventDefault();
@@ -58,14 +58,18 @@
         telephone: $("#phone").val(),
         nomType: $("#type").val()
     }
-        
+    alert(JSONN.stringify(data)) ;
+
     $.ajax({
       type: "POST",
       url: "localhost:5050/api/user/add",
       contentType: "application/json",
       data: JSON.stringify(data),
-      success: function(){
-        $(".message_field").html('Thanks!');
+      success: function(response){
+        alart("data insert successfuly");
+      },
+      error: function(error){
+         alert("Erreur: "+ error);
       }
     });
     

@@ -1,0 +1,10 @@
+RewriteEngine on
+
+RewriteRule ^$                         src/app/components/addUser/addUser.html
+#RewriteRule ^clients$                 Controllers/Client/getClients.php
+#RewriteRule ^client/add$              Controllers/Client/postClient.php
+#RewriteRule ^client$                  Controllers/Client/getClient.php
+#RewriteRule ^livres$                  Controllers/Livre/getLivres.php
+#RewriteRule ^livre$                   Controllers/LIVRE/getLivre.php
+#RewriteRule ^client/([0-9A-Za-z]+)$                 Controllers/Client/getClient.php
+ 
